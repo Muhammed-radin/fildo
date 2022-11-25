@@ -1,0 +1,12 @@
+@import url('controlls.css');
+
+body {
+    margin: 0;
+    background: rgb(13, 11, 44);
+    color: #fff;
+    overflow: hidden;
+}
+
+* {
+    font-family: sans-serif;
+}

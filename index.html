@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>video player</title>
+
+        <link rel="stylesheet" href="lib/all.css" />
+        <link rel="stylesheet" href="styles/main.css" />
+        <script
+            type="module"
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+        ></script>
+        <script
+            nomodule
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+        ></script>
+    </head>
+    <body>
+        <div class="top-bar">
+            <div>
+                <p class="h1"><b>Fildo</b></p>
+            </div>
+            <div class="right-box">
+                <div class="sound-box">
+                    <ion-icon
+                        name="volume-medium-outline"
+                        id="volumeIcon"
+                    ></ion-icon>
+                    <input
+                        type="range"
+                        name=""
+                        id="soundControll"
+                        value="100"
+                    />
+                </div>
+                <ion-icon
+                    name="refresh-outline"
+                    onclick="window.location.reload()"
+                ></ion-icon>
+                <ion-icon name="time-outline" onclick="startHistory()"></ion-icon>
+                <ion-icon
+                    name="open-outline"
+                    id="fullscreenBtn"
+                    onclick="fullscreenit()"
+                ></ion-icon>
+                <ion-icon name="cog-outline"></ion-icon>
+            </div>
+        </div>
+        <div class="video-box">
+            <video id="videoPlayer">
+                <source src="" type="video/mp4" id="playerSrc" />
+            </video>
+        </div>
+        <div class="controlls">
+            <button id="playBtn">
+                <ion-icon name="play"></ion-icon>
+            </button>
+            <button id="pauseBtn">
+                <ion-icon name="pause"></ion-icon>
+            </button>
+            <div class="timer">0:00</div>
+            <input type="range" name="" id="playingSeek" value="0" />
+            <div id="opener" onclick="openModelVideo()">
+                <ion-icon name="folder-open-outline"></ion-icon>
+            </div>
+        </div>
+        <div class="null-play" onclick="openModelVideo()">
+            open a video to play or click me
+        </div>
+        <div class="model">
+            <div class="model-head">
+                <span class="model-head-text">Choose a method</span>
+                <span class="close-model-btn">
+                    <ion-icon name="close-outline"></ion-icon>
+                </span>
+            </div>
+            <div class="model-body">
+                <div class="model-content" onclick="openVideo()">
+                    <p>Browse Video</p>
+                    <span><ion-icon name="folder-outline"></ion-icon></span>
+                </div>
+                <div class="model-content" onclick="openWithVideoUrl()">
+                    <p>Open With Url</p>
+                    <span
+                        ><ion-icon name="chevron-forward-outline"></ion-icon
+                    ></span>
+                </div>
+            </div>
+        </div>
+        <div id="progress">
+            <img src="lib/Spinner-1s-200px.gif" alt="loading" />
+        </div>
+        <input type="file" accept="video/mp4, video/*, .mkv, .mp3, .ogg, audio/mp3, audio/ogg" id="openManager" />
+        <script src="scripts/app.js"></script>
+    </body>
+</html>
